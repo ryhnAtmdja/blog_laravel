@@ -6,10 +6,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Web Blog | {{ $title }}</title>
+
+    {{-- icon --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   </head>
   <body>
     {{-- navbar --}}
-    @include('components.navbar')
+    @if ($title !== "Register")
+        @include('components.navbar')
+    @endif
 
     {{-- berisi apapun yang didalam kontainer --}}
     <div class="container mt-4">

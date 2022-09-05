@@ -22,4 +22,10 @@
         <li class="nav-item {{ $title === "Category" ? "active" : ""  }}">
           <a class="nav-link" href="/category">Category</a>
         </li>
-</nav>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item {{ $title === "Login" ? "active" : ""  }}">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+      </ul>
+    </nav>

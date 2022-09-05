@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthorController;
-use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,7 @@ Route::get('/authors', [AuthorController::class, 'showAll']);
 Route::get('/author/{author:username}', [AuthorController::class, 'showByUname']);
 
 Route::get('/category', [CategoryController::class, 'showAll']);
+
+Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/register', [RegisterController::class, 'index']);

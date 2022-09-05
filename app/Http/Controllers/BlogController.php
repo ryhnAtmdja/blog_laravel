@@ -13,7 +13,7 @@ class BlogController extends Controller
         return view('blogs', [
             "title" => "All Blogs Posts",
             "all_blog_posts" => Blog::all(),
-            "blog_posts" => Blog::with(['author', 'category'])->latest()->search(request(['search', 'category', 'author']))->paginate(4),
+            "blog_posts" => Blog::with(['author', 'category'])->latest()->search(request(['search', 'category', 'author']))->paginate(4)->withQueryString(),
             "categories" => Category::all(),
         ]);
     }
