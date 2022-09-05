@@ -30,7 +30,7 @@
               Welcome back, {{ auth()->user()->name }}
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Dashboard</a>
+              <a class="dropdown-item" href="/dashboard">Dashboard</a>
               <form action="/logout" method="POST">
                 @csrf
                   <button class="dropdown-item" type="submit" name="logout">

@@ -31,11 +31,25 @@
             @csrf
             <div class="form-group">
               <label for="email">Email address</label>
-              <input type="email" placeholder="example@gmail.com" class="form-control" id="email" name="email">
+              <input type="email" value="{{ old('email') }}" placeholder="example@gmail.com" class="form-control @error('email')
+                  is-invalid
+              @enderror" id="email" name="email" required>
+              @error('email')
+              <div id="email" class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" placeholder="********" class="form-control" id="password" name="password">
+              <input type="password" value="{{ old('password') }}" placeholder="********" class="form-control @error('password')
+              is-invalid
+          @enderror" id="password" name="password">
+          @error('password')
+              <div id="password" class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
             </div>
             <button type="submit" class="btn btn-block btn-primary">Login</button>
             <span class="text-dark d-block mt-3 text-center">Belum memiliki akun ? <a href="/register">Daftar Sekarang!</a></span>
