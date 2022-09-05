@@ -12,7 +12,7 @@
   </head>
   <body>
     {{-- navbar --}}
-    @if ($title !== "Register")
+    @if ($title !== "Register" && $title !== "Login")
         @include('components.navbar')
     @endif
 

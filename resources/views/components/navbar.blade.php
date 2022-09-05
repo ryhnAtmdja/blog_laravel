@@ -24,8 +24,25 @@
         </li>
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item {{ $title === "Login" ? "active" : ""  }}">
-            <a class="nav-link" href="/login">Login</a>
+        @auth
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Welcome back, {{ auth()->user()->name }}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Dashboard</a>
+              <form action="/logout" method="POST">
+                @csrf
+                  <button class="dropdown-item" type="submit" name="logout">
+                    Logout
+                  </button>
+              </form>
+            </div>
           </li>
+          @else
+          <li class="nav-item {{ $title === "Login" ? "active" : ""  }}">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+        @endauth
       </ul>
     </nav>
