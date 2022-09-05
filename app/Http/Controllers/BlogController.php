@@ -12,7 +12,8 @@ class BlogController extends Controller
     public function showAll(){
         return view('blogs', [
             "title" => "All Blogs Posts",
-            "blog_posts" => Blog::with(['author', 'category'])->latest()->search(request(['search', 'category', 'author']))->get(),
+            "all_blog_posts" => Blog::all(),
+            "blog_posts" => Blog::with(['author', 'category'])->latest()->search(request(['search', 'category', 'author']))->paginate(4),
             "categories" => Category::all(),
         ]);
     }

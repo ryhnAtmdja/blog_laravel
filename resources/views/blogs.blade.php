@@ -14,7 +14,7 @@
             </h2>
         </div>
         <div class="col-4 text-right pt-3">
-            <h6>Jumlah Blogs : <span class="badge badge-primary">{{ $blog_posts->count() }}</span></h6>
+            <h6>Jumlah Blogs : <span class="badge badge-primary">{{ $all_blog_posts->count() }}</span></h6>
         </div>
     </div>
 
@@ -98,6 +98,10 @@
     Blog dengan nama : <span class="font-weight-bold">{{ request('search') }}</span> tidak ditemukan...
 </div>
 @endif
+
+<div class="d-flex justify-content-end">
+    {{ $blog_posts->links() }}
+</div>
 
 @endsection
 
